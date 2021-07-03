@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        label{
+            width:100px;
+            display: inline-block;
+        }
+    input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+        input[type=number], select {
+    width:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+        input[type=submit] {
+    width:57%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+ 
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAUD TRANSACTION PREDICTOR</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
+</head>
+    <h1 style="text-align: center;color:#4CAF50">FRAUD DETECTION SYSTEM</h1>
+<body style="background-color:antiquewhite">
+    <div id="form">
+    <form action="{{ url_for('main') }}" method="POST">
+          <label for="step">STEP:</label>
+          <input type="number" id="step" name="step" placeholder="Enter step number: xxx"required><br>
+           <label for="gender">GENDER:</label>
+    <select id="gender" name="gender">
+      <option value="2">Male</option>
+      <option value="1">Female</option>
+      <option value="3">Undisclosed</option>
+        <option value="0">Enby</option>
+    </select>
+        <br>
+          
+
+     <label for="merchant">MERCHANT:</label>
+     <select id="merchant" name="merchant">
+          <option value="30">M348934600</option>
+          <option value="18">M1823072687</option>
+          <option value="36">M50039827 </option>
+          <option value="22">M1888755466</option>
+          <option value="0">M1053599405 </option>
+          <option value="45">M85975013</option>
+          <option value="34">M480139044</option>
+          <option value="39">M692898500</option>
+          <option value="29">M348875670</option>
+          <option value="9">M151143676</option>
+          <option value="42">M840466850</option>
+          <option value="15">M1741626453</option>
+          <option value="10">M1535107174</option>
+          <option value="43">M855959430</option>
+          <option value="31">M349281107</option>
+          <option value="27">M209847108</option>
+          <option value="28">M2122776122</option>
+          <option value="21">M1873032707</option>
+          <option value="25">M2011752106</option>
+          <option value="44">M857378720</option>
+          <option value="2">M1198415165</option>
+          <option value="16">M1748431652</option>
+          <option value="49">M980657600</option>
+          <option value="5">M1352454843</option>
+          <option value="1">M117188757</option>
+          <option value="37">M547558035</option>
+          <option value="14">M17379832 </option>
+          <option value="12">M1649169323</option>
+          <option value="24">M1946091778</option>
+          <option value="48">M97925176 </option>
+          <option value="46">M923029380</option>
+          <option value="6">M1353266412</option>
+          <option value="19">M1842530320</option>
+          <option value="38">M677738360</option>
+          <option value="4">M1313686961</option>
+          <option value="40">M732195782</option>
+          <option value="11">M1600850729</option>
+          <option value="20">M1872033263</option>
+          <option value="32">M3697346</option>
+          <option value="35">M495352832</option>
+          <option value="7">M1400236507</option>
+          <option value="3">M1294758098</option>
+          <option value="23">M1913465890</option>
+          <option value="33">M45060432</option>
+          <option value="41">M78078399</option>
+          <option value="26">M2080407379</option>
+          <option value="17">M1788569036</option>
+          <option value="8">M1416436880</option>
+          <option value="47">M933210764</option>
+          <option value="13">M1726401631</option> 
+          
+      
+      </select>
+      <br>
+           
+    <label for="category">CATEGORY:</label>
+    <select id="category" name="category">
+      <option value="12">Transportation</option>
+      <option value="4">Health</option>
+      <option value="9">Other services </option>
+        <option value="3">Food</option>
+        <option value="6">Hotel Services </option>
+        <option value="0">Bars and restaurants</option>
+        <option value="11">Tech</option>
+        <option value="10">Sports and Toys</option>
+        <option value="14">Wellness and Beauty</option>
+        <option value="7">Hyper</option>
+        <option value="2">Fashion</option>
+        <option value="5">Home</option>
+        <option value="1">Contents</option>
+        <option value="13">Travel</option>
+        <option value="8">Leisure</option>
+    
+    </select>
+        <br>
+     
+          <label for="amount">AMOUNT:</label>
+            <input name="amount" type="number" step="any" placeholder="Enter amount eg 39.62" required><br>
+            <input type="submit" value="PREDICT">
+</form>
+    </div>
+    <div id="xgboost" style="background-color:#4CAF50;color: white;width:820px;border: none;
+    border-radius: 4px; padding: 14px 20px;">
+        <h>XGBOOST PREDICTION OUTCOME:</h>
+        <p>RESULT: {{result1}}</p>
+        <p>CONFIDENCE FACTOR: {{confidence_factor1}}</p>
+          
+    </div> 
+    <br>
+    <div id="logistic" style="background-color:#4CAF50;color: white;width:820px;border: none;
+    border-radius: 4px; padding: 14px 20px;">
+        <h> LOGISTIC REGRESSION PREDICTION  OUTCOME:</h>
+        <p>RESULT: {{result2}}</p>
+        <p>CONFIDENCE FACTOR: {{confidence_factor2}}</p>
+          
+    </div> 
+          
+</body>
+</html>

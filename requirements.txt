@@ -1,0 +1,10 @@
+Flask==2.0.1
+pandas==1.2.5
+gunicorn
+Werkzeug
+Jinja2
+itsdangerous
+MarkupSafe
+scikit-learn
+pickleshare
+xgboost
