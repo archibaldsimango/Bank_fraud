@@ -5,6 +5,6 @@ Werkzeug
 Jinja2
 itsdangerous
 MarkupSafe
-scikit-learn
+scikit_learn==0.22.2.post1
 pickleshare
 xgboost
